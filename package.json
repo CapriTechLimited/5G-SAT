@@ -1,6 +1,6 @@
 {
   "name": "5G-SAT",
-  "version": "0.3.0",
+  "version": "0.0.1",
   "description": "A graphical security analysis tool for 5G systems",
   "main": "main.js",
   "scripts": {
@@ -25,6 +25,21 @@
     "url": "https://github.com/CapriTechLimited/5G-SAT/issues"
   },
   "homepage": "https://github.com/CapriTechLimited/5G-SAT/#readme",
+  "build": {
+    "appId": "org.CapriTechLimited.5G-SAT",
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "icon": "build/icon.png"
+    }
+  },
   "dependencies": {
     "cytoscape": "^3.2.13",
     "jsonfile": "^4.0.0"
