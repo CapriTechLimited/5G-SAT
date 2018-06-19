@@ -1,8 +1,8 @@
 {
-  "name": "5G-SAT",
+  "name": "5g-sat",
   "version": "0.0.1",
   "description": "A graphical security analysis tool for 5G systems",
-  "main": "main.js",
+  "main": "./app/src/main.js",
   "scripts": {
     "lint": "prettier --no-semi --single-quote --write './app/**/*.js' && standard './app/**/*.js' --fix",
     "dev": "cross-env NODE_ENV=development electron ./app/src/main.js",
@@ -16,7 +16,7 @@
   },
   "keywords": [
     "Electron",
-    "network",
+    "5G",
     "security"
   ],
   "author": "or3stis",
@@ -24,9 +24,9 @@
   "bugs": {
     "url": "https://github.com/CapriTechLimited/5G-SAT/issues"
   },
-  "homepage": "https://github.com/CapriTechLimited/5G-SAT/#readme",
   "build": {
-    "appId": "org.CapriTechLimited.5G-SAT",
+    "productName": "5G-SAT",
+    "appId": "org.CapriTechLimited.5g-sat",
     "mac": {
       "target": "dmg"
     },
@@ -40,6 +40,7 @@
       "icon": "build/icon.png"
     }
   },
+  "homepage": "https://github.com/CapriTechLimited/5G-SAT/#readme",
   "dependencies": {
     "cytoscape": "^3.2.13",
     "jsonfile": "^4.0.0"
