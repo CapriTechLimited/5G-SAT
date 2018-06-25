@@ -88,7 +88,6 @@ module.exports = function designUI () {
     <li><a>network</a></li>
     <li><a>security</a></li>
     <li><a>social</a></li>
-    <li><a>sensing</a></li>
     <li><a>network-security</a></li>
     <li><a>network-social</a></li>
   </ul>
@@ -150,10 +149,10 @@ module.exports = function designUI () {
 </button>
 
 <button class="btn-icon" id="transition-btn">
-    <svg width="24" height="24">
-      <use xlink:href="icons/swap.svg#swap" class="icon"></use>
-    </svg>
-  </button>
+  <svg width="24" height="24">
+    <use xlink:href="icons/swap.svg#swap" class="icon"></use>
+  </svg>
+</button>
 
 <button class="btn-icon" id="save-btn">
   <svg width="24" height="24">

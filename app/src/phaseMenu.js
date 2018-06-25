@@ -3,7 +3,7 @@
 const load = require('./helpers/load.js')
 const cyOptions = require('./helpers/cyOptions.js')
 const initialize = require('./initialize.js')
-const pcapImport = require('./imp/pcapImport.js')
+// const pcapImport = require('./imp/pcapImport.js')
 
 const template = '../../settings/modelTemplate.js'
 const testGraph = '../../../sample/5gTest.json'
@@ -74,19 +74,24 @@ module.exports = function phaseMenu (phase) {
 
   // loads the pcapImport module during the implementation phase
   if (phase === 'implementation') {
-    const btnImport = document.createElement('button')
-    btnImport.id = 'import-id'
-    btnImport.className = 'menu-btn'
-    btnImport.type = 'button'
-    btnImport.value = 'import'
-    btnImport.textContent = 'import pcapng file'
+    // const notice = document.createElement('div')
+    // notice.id = 'notice-id'
+    // notice.className = 'menu-btn'
+    wrapper.textContent = 'under development 🚧'
+    // wrapper.appendChild(notice)
+    // const btnImport = document.createElement('button')
+    // btnImport.id = 'import-id'
+    // btnImport.className = 'menu-btn'
+    // btnImport.type = 'button'
+    // btnImport.value = 'import'
+    // btnImport.textContent = 'import pcapng file'
 
-    wrapper.appendChild(btnImport)
+    // wrapper.appendChild(btnImport)
 
-    btnImport.addEventListener('click', () => {
-      graph.removeChild(wrapper)
-      pcapImport(cy, phase)
-    })
+    // btnImport.addEventListener('click', () => {
+    //   graph.removeChild(wrapper)
+    //   pcapImport(cy, phase)
+    // })
   }
 
   // appends the buttons to the graph container

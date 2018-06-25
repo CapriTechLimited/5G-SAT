@@ -45,7 +45,6 @@ const template = [
         label: '5G-SAT documentation',
         click () {
           require('electron').shell.openExternal(docsURL)
-          // console.log('tess')
         }
       },
       { type: 'separator' },
