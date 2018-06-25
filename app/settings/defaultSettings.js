@@ -1,5 +1,5 @@
 // default settings of ASTo
-const settings = `// settings of ASTo
+const settings = `// settings of 5G-SAT
 
 const settings = {
   darkText: '#abb2bf',

@@ -85,7 +85,7 @@ cveUrl.value = settings.cveSearchUrl
 const saveBtn = document.getElementById('settings-save')
 
 saveBtn.addEventListener('click', () => {
-  const newSettings = `// settings of ASTo
+  const newSettings = `// settings of 5G-SAT
 
 const settings = {
   darkText: '${darkText.value}',
@@ -149,10 +149,12 @@ const settings = {
   colorTheme: '${defaultColor.value}',
   // number of maximum bubbles in the message area
   maxNumberOfBubbles: ${numberBubbles.value},
-  // url for the ASTo wiki
+  // url for the wiki
   docsURL: 'https://github.com/CapriTechLimited/5G-SAT',
   // url for searching vulnerabilities
   cveSearchUrl: '${cveUrl.value}'
+  // url for issue reporting
+  issueURL: 'https://github.com/CapriTechLimited/5G-SAT/issues'
 }
 
 module.exports = settings
