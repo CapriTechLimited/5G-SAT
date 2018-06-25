@@ -4,9 +4,6 @@
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-![travis build](https://travis-ci.org/Or3stis/apparatus.svg?branch=master)
-[![dependencies Status](https://david-dm.org/or3stis/apparatus.svg)](https://david-dm.org/or3stis/apparatus)
-[![devDependencies Status](https://david-dm.org/or3stis/apparatus/dev-status.svg)](https://david-dm.org/or3stis/apparatus?type=dev)
 
 5G-SAT is security analysis tool for 5G systems. It is a fork of the IoT security analysis tool [ASTo](https://github.com/Or3stis/apparatus). 5G-SAT is based on
 [electron](http://electron.atom.io/) and
@@ -14,18 +11,16 @@
 
 Some screenshots..
 
-![](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot1.png)
+![5G-SAT screenshot home](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot1.png)
 
-![](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot2.png)
+![5G-SAT screenshot design phase](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot2.png)
 
-![](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot3.png)
+![5G-SAT screenshot design phase light mode](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot3.png)
 
-![](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot4.png)
+![5G-SAT screenshot design phase security analysis](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot4.png)
 
-![asto UI 2](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot3.png)
 
 5G-SAT supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). You can switch between the themes by typing `toggle` in ASTo's console (bottom right corner, cmd/ctrl + l). To make the change persistent between startups you need to modify the `config.colorTheme` variable in the `./app/settings/config.js` file. The value can either be `dark` or `light`.
-
 
 ## Color themes
 
@@ -77,8 +72,5 @@ You can find more information about Cytoscape's performance optimizations in thi
 If you want to contribute that's great news 😃. Check the [contributing](https://github.com/CapriTechLimited/5G-SAT/blob/master/CONTRIBUTING.md) guide. The application is being developed on Mac. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/CapriTechLimited/5G-SAT/issues).
 
 <!-- If you want to find out how the app works check the [wiki](https://github.com/CapriTechLimited/5G-SAT/wiki). -->
-
-<!-- You can check the project's planned features in the [roadmap](https://github.com/Or3stis/apparatus/wiki/Roadmap). -->
-
 
 ### License [MIT](LICENSE.md)

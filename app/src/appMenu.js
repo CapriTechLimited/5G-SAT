@@ -1,8 +1,7 @@
 const electron = require('electron')
 const app = electron.app
 
-// url for the ASTo wiki
-const docsURL = 'https://or3stis.github.io/apparatus/docs'
+const docsURL = 'https://github.com/CapriTechLimited/5G-SAT'
 // url for issue reporting
 const issueURL = 'https://github.com/CapriTechLimited/5G-SAT/issues'
 
@@ -43,7 +42,7 @@ const template = [
     role: 'help',
     submenu: [
       {
-        label: 'Apparatus documentation',
+        label: '5G-SAT documentation',
         click () {
           require('electron').shell.openExternal(docsURL)
           // console.log('tess')

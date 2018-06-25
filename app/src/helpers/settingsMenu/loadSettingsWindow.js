@@ -150,7 +150,7 @@ const settings = {
   // number of maximum bubbles in the message area
   maxNumberOfBubbles: ${numberBubbles.value},
   // url for the ASTo wiki
-  docsURL: 'https://or3stis.github.io/apparatus/docs',
+  docsURL: 'https://github.com/CapriTechLimited/5G-SAT',
   // url for searching vulnerabilities
   cveSearchUrl: '${cveUrl.value}'
 }
