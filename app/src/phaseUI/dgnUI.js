@@ -25,18 +25,13 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu" id="add-component-id">
-    <li><a>service provider</a></li>
-    <li><a>infrastructure provider</a></li>
-    <li><a>cescm</a></li>
-    <li><a>vim</a></li>
-    <li><a>main dc</a></li>
-    <li><a>light dc</a></li>
+    <li><a>actor</a></li>
+    <li><a>device</a></li>
+    <li><a>information</a></li>
+    <li><a>data center</a></li>
     <li><a>vnf</a></li>
-    <li><a>storage</a></li>
-    <li><a>process</a></li>
     <li><a>constraint</a></li>
     <li><a>asset</a></li>
-    <li><a>end user</a></li>
     <li><a>threat</a></li>
     <li><a>malicious actor</a></li>
   </ul>
@@ -61,18 +56,13 @@ module.exports = function designUI () {
     </svg>
   </button>
   <ul class="dropdown-menu"  id="selection-id">
-    <li><a>service provider</a></li>
-    <li><a>infrastructure provider</a></li>
-    <li><a>cescm</a></li>
-    <li><a>vim</a></li>
-    <li><a>main dc</a></li>
-    <li><a>light dc</a></li>
+    <li><a>actor</a></li>
+    <li><a>device</a></li>
+    <li><a>information</a></li>
+    <li><a>data center</a></li>
     <li><a>vnf</a></li>
-    <li><a>storage</a></li>
-    <li><a>process</a></li>
     <li><a>constraint</a></li>
     <li><a>asset</a></li>
-    <li><a>end user</a></li>
     <li><a>threat</a></li>
     <li><a>malicious actor</a></li>
   </ul>

@@ -17,101 +17,62 @@ module.exports = function addComponent (cy, srcNode, trgNode) {
   let trgNodeCpt = trgNode.asto.concept
 
   switch (true) {
-    case srcNodeCpt === 'service provider' && trgNodeCpt === 'vnf':
+    case srcNodeCpt === 'actor' && trgNodeCpt === 'data center':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
-    case srcNodeCpt === 'service provider' && trgNodeCpt === 'cescm':
+    case srcNodeCpt === 'actor' && trgNodeCpt === 'information':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
-    case srcNodeCpt === 'service provider' && trgNodeCpt === 'light dc':
+    case srcNodeCpt === 'actor' && trgNodeCpt === 'device':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
-    case srcNodeCpt === 'service provider' && trgNodeCpt === 'storage':
-      addEdge(cy, srcNodeId, trgNodeId, srcNodeCpt, trgNodeCpt, 'uses')
-      break
-    case srcNodeCpt === 'service provider' && trgNodeCpt === 'process':
+    case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'data center':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
-    case srcNodeCpt === 'infrastructure provider' && trgNodeCpt === 'vnf':
-      addEdge(cy, srcNodeId, trgNodeId, 'provides')
-      break
-    case srcNodeCpt === 'infrastructure provider' && trgNodeCpt === 'main dc':
-      addEdge(cy, srcNodeId, trgNodeId, 'owns')
-      break
-    case srcNodeCpt === 'infrastructure provider' && trgNodeCpt === 'cescm':
-      addEdge(cy, srcNodeId, trgNodeId, 'owns')
-      break
-    case srcNodeCpt === 'infrastructure provider' && trgNodeCpt === 'vim':
-      addEdge(cy, srcNodeId, trgNodeId, 'owns')
-      break
-    case srcNodeCpt === 'infrastructure provider' && trgNodeCpt === 'light dc':
-      addEdge(cy, srcNodeId, trgNodeId, 'owns')
-      break
-    case srcNodeCpt === 'cescm' && trgNodeCpt === 'vim':
+    case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'information':
       addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
-    case srcNodeCpt === 'cescm' && trgNodeCpt === 'main dc':
-      addEdge(cy, srcNodeId, trgNodeId, 'manages')
+    case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'device':
+      addEdge(cy, srcNodeId, trgNodeId, 'uses')
       break
-    case srcNodeCpt === 'vim' && trgNodeCpt === 'main dc':
-      addEdge(cy, srcNodeId, trgNodeId, 'manages')
+    case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'threat':
+      addEdge(cy, srcNodeId, trgNodeId, 'poses')
       break
-    case srcNodeCpt === 'vim' && trgNodeCpt === 'light dc':
-      addEdge(cy, srcNodeId, trgNodeId, 'manages')
-      break
-    case srcNodeCpt === 'main dc' && trgNodeCpt === 'vnf':
+    case srcNodeCpt === 'data center' && trgNodeCpt === 'vnf':
       addEdge(cy, srcNodeId, trgNodeId, 'has')
       break
-    case srcNodeCpt === 'main dc' && trgNodeCpt === 'storage':
+    case srcNodeCpt === 'vnf' && trgNodeCpt === 'information':
+      addEdge(cy, srcNodeId, trgNodeId, 'uses')
+      break
+    case srcNodeCpt === 'device' && trgNodeCpt === 'information':
+      addEdge(cy, srcNodeId, trgNodeId, 'uses')
+      break
+    case srcNodeCpt === 'device' && trgNodeCpt === 'data center':
+      addEdge(cy, srcNodeId, trgNodeId, 'connected')
+      break
+    case srcNodeCpt === 'information' && trgNodeCpt === 'device':
       addEdge(cy, srcNodeId, trgNodeId, 'has')
       break
-    case srcNodeCpt === 'main dc' && trgNodeCpt === 'process':
-      addEdge(cy, srcNodeId, trgNodeId, 'has')
-      break
-    case srcNodeCpt === 'light dc' && trgNodeCpt === 'main dc':
-      addEdge(cy, srcNodeId, trgNodeId, 'belongs')
-      break
-    case srcNodeCpt === 'light dc' && trgNodeCpt === 'vnf':
-      addEdge(cy, srcNodeId, trgNodeId, 'has')
-      break
-    case srcNodeCpt === 'light dc' && trgNodeCpt === 'storage':
-      addEdge(cy, srcNodeId, trgNodeId, 'has')
-      break
-    case srcNodeCpt === 'light dc' && trgNodeCpt === 'process':
-      addEdge(cy, srcNodeId, trgNodeId, 'has')
-      break
-    case srcNodeCpt === 'constraint' && trgNodeCpt === 'vnf':
+    case srcNodeCpt === 'asset' && trgNodeCpt === 'device':
       addEdge(cy, srcNodeId, trgNodeId, 'is')
       break
-    case srcNodeCpt === 'constraint' && trgNodeCpt === 'main dc':
-      addEdge(cy, srcNodeId, trgNodeId, 'imposes')
+    case srcNodeCpt === 'asset' && trgNodeCpt === 'information':
+      addEdge(cy, srcNodeId, trgNodeId, 'is')
       break
-    case srcNodeCpt === 'constraint' && trgNodeCpt === 'light dc':
-      addEdge(cy, srcNodeId, trgNodeId, 'imposes')
-      break
-    case srcNodeCpt === 'constraint' && trgNodeCpt === 'threat':
-      addEdge(cy, srcNodeId, trgNodeId, 'mitigates')
+    case srcNodeCpt === 'asset' && trgNodeCpt === 'data center':
+      addEdge(cy, srcNodeId, trgNodeId, 'is')
       break
     case srcNodeCpt === 'asset' && trgNodeCpt === 'vnf':
       addEdge(cy, srcNodeId, trgNodeId, 'is')
       break
-    case srcNodeCpt === 'asset' && trgNodeCpt === 'storage':
-      addEdge(cy, srcNodeId, trgNodeId, 'is')
+    case srcNodeCpt === 'constraint' && trgNodeCpt === 'data center':
+      addEdge(cy, srcNodeId, trgNodeId, 'imposes')
       break
-    case srcNodeCpt === 'asset' && trgNodeCpt === 'process':
-      addEdge(cy, srcNodeId, trgNodeId, 'uses')
-      break
-    case srcNodeCpt === 'end user' && trgNodeCpt === 'storage':
-      addEdge(cy, srcNodeId, trgNodeId, 'uses')
-      break
-    case srcNodeCpt === 'end user' && trgNodeCpt === 'process':
-      addEdge(cy, srcNodeId, trgNodeId, 'is')
+    case srcNodeCpt === 'constraint' && trgNodeCpt === 'threat':
+      addEdge(cy, srcNodeId, trgNodeId, 'protects')
       break
     case srcNodeCpt === 'threat' && trgNodeCpt === 'asset':
       addEdge(cy, srcNodeId, trgNodeId, 'targets')
-      break
-    case srcNodeCpt === 'malicious actor' && trgNodeCpt === 'threat':
-      addEdge(cy, srcNodeId, trgNodeId, 'poses')
       break
     default:
       bubbleTxt(`${srcNodeCpt} → ${trgNodeCpt}\nnot allowed 😔`)

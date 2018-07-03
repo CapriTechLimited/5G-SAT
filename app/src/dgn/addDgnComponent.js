@@ -16,7 +16,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
   let component = event.target.textContent
 
   switch (component) {
-    case 'service provider':
+    case 'actor':
       cy.add({
         group: 'nodes',
         data: {
@@ -24,7 +24,8 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            concept: 'service provider'
+            actorType: '',
+            concept: 'actor'
           }
         },
         renderedPosition: {
@@ -33,7 +34,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'infrastructure provider':
+    case 'device':
       cy.add({
         group: 'nodes',
         data: {
@@ -41,8 +42,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            purpose: '',
-            concept: 'infrastructure provider'
+            concept: 'device'
           }
         },
         renderedPosition: {
@@ -51,7 +51,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'cescm':
+    case 'information':
       cy.add({
         group: 'nodes',
         data: {
@@ -59,7 +59,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            concept: 'cescm'
+            concept: 'information'
           }
         },
         renderedPosition: {
@@ -68,7 +68,7 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'vim':
+    case 'data center':
       cy.add({
         group: 'nodes',
         data: {
@@ -76,42 +76,8 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            concept: 'vim'
-          }
-        },
-        renderedPosition: {
-          x: posX,
-          y: posY
-        }
-      })
-      break
-    case 'main dc':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${nodeCounter}`,
-          label: `${component}`,
-          asto: {
-            description: '',
-            concept: 'main dc'
-          }
-        },
-        renderedPosition: {
-          x: posX,
-          y: posY
-        }
-      })
-      break
-    case 'light dc':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${nodeCounter}`,
-          label: `${component}`,
-          asto: {
-            description: '',
-            intent: '',
-            concept: 'light dc'
+            dcType: '',
+            concept: 'data center'
           }
         },
         renderedPosition: {
@@ -128,43 +94,8 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
+            vnfType: '',
             concept: 'vnf'
-          }
-        },
-        renderedPosition: {
-          x: posX,
-          y: posY
-        }
-      })
-      break
-    case 'storage':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${nodeCounter}`,
-          label: `${component}`,
-          asto: {
-            description: '',
-            property: '',
-            concept: 'storage'
-          }
-        },
-        renderedPosition: {
-          x: posX,
-          y: posY
-        }
-      })
-      break
-    case 'process':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${nodeCounter}`,
-          label: `${component}`,
-          asto: {
-            description: '',
-            type: '',
-            concept: 'process'
           }
         },
         renderedPosition: {
@@ -199,23 +130,6 @@ module.exports = function addDgnComponent (cy, event, nodeCounter) {
           asto: {
             description: '',
             concept: 'asset'
-          }
-        },
-        renderedPosition: {
-          x: posX,
-          y: posY
-        }
-      })
-      break
-    case 'end user':
-      cy.add({
-        group: 'nodes',
-        data: {
-          id: `n${nodeCounter}`,
-          label: `${component}`,
-          asto: {
-            description: '',
-            concept: 'end user'
           }
         },
         renderedPosition: {

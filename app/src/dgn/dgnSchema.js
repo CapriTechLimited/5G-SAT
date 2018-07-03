@@ -1,74 +1,34 @@
 // design phase concept schema
 
 const dgnMetamodel = {
-  serviceProvArray: ['vnf', 'cescm', 'light dc', 'storage', 'process'],
-  infrastructureProvArray: ['vnf', 'main dc', 'light dc', 'vim'],
-  cescmArray: ['service provider', 'infrastructure provider', 'vim', 'main dc'],
-  vimArray: ['infrastructure provider', 'cescm', 'main dc', 'light dc'],
-  mainDcArray: [
-    'infrastructure provider',
+  actorArray: ['data center', 'device', 'information'],
+  deviceArray: ['actor', 'asset', 'information', 'data center'],
+  informationArray: ['actor', 'device', 'data center'],
+  dataCenterArray: [
+    'actor',
     'vnf',
-    'storage',
-    'process',
-    'light dc',
-    'vnf',
-    'vim',
-    'cescm',
-    'constraint'
-  ],
-  lightDcArray: [
-    'infrastructure provider',
-    'service provider',
-    'storage',
-    'process',
-    'main dc',
-    'vnf',
-    'vim',
-    'cescm',
-    'constraint'
-  ],
-  vnfArray: [
-    'service provider',
-    'infrastructure provider',
-    'light dc',
-    'main dc',
     'constraint',
     'asset'
   ],
-  storageArray: [
-    'service provider',
-    'main dc',
-    'light dc',
+  vnfArray: [
+    'data center',
     'asset',
-    'end user'
+    'information'
   ],
-  processArray: [
-    'service providers',
-    'main dc',
-    'light dc',
-    'asset',
-    'end user'
-  ],
-  constraintArray: ['main dc', 'light dc', 'vnf', 'threat'],
-  assetArray: ['vnf', 'storage', 'process', 'threat'],
-  endUserArray: ['storage', 'process'],
+  constraintArray: ['data center', 'threat'],
+  assetArray: ['device', 'information', 'data center', 'threat'],
   threatArray: ['asset', 'constraint', 'malicious actor'],
-  maliciousActorArray: ['threat']
+  maliciousActorArray: ['data center', 'device', 'information', 'threat']
 }
 
 dgnMetamodel.pairs = {
-  'service provider': dgnMetamodel.serviceProvArray,
-  'infrastructure provider': dgnMetamodel.infrastructureProvArray,
-  cesm: dgnMetamodel.cescmArray,
-  vim: dgnMetamodel.vimArray,
-  'main dc': dgnMetamodel.mainDcArray,
-  'light dc': dgnMetamodel.lightDcArray,
+  actor: dgnMetamodel.actorArray,
+  device: dgnMetamodel.deviceArray,
+  iformation: dgnMetamodel.informationArray,
+  'data center': dgnMetamodel.dataCenterArray,
   vnf: dgnMetamodel.vnfArray,
-  storage: dgnMetamodel.storageArray,
-  processArray: dgnMetamodel.processArray,
   constraint: dgnMetamodel.constraintArray,
   asset: dgnMetamodel.assetArray,
-  'end user': dgnMetamodel.endUserArray,
   threat: dgnMetamodel.threatArray,
   'malicious actor': dgnMetamodel.maliciousActorArray
 }

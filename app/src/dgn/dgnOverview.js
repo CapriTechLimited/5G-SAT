@@ -9,34 +9,19 @@ module.exports = function overview (cy) {
 
   // stores the number of each node
   const graphNodes = {
-    'service provider': {
+    actor: {
       numberOfNodes: 0
     },
-    'infrastructure provider': {
+    device: {
       numberOfNodes: 0
     },
-    cescm: {
+    information: {
       numberOfNodes: 0
     },
-    vim: {
-      numberOfNodes: 0
-    },
-    'main dc': {
-      numberOfNodes: 0
-    },
-    'light dc': {
-      numberOfNodes: 0
-    },
-    'end user': {
+    'data center': {
       numberOfNodes: 0
     },
     vnf: {
-      numberOfNodes: 0
-    },
-    storage: {
-      numberOfNodes: 0
-    },
-    process: {
       numberOfNodes: 0
     },
     'malicious actor': {
