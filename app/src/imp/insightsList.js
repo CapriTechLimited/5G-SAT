@@ -1,6 +1,6 @@
 // contains the attribute/connection patterns and the insights.js
 
-const insightList = {
+const insightsList = {
   s0: {
     concept: 'device',
     attribute: 'layer',
@@ -32,8 +32,8 @@ const insightList = {
     nodes: []
   },
   s4: {
-    concept: 'network connection',
-    attribute: 'description',
+    concept: 'connection',
+    attribute: 'medium',
     attributeValue: 'wireless',
     insight:
       'Wireless connections are subject to information disclosure attacks. Use encrypted protocols.',
@@ -45,7 +45,21 @@ const insightList = {
     attributeValue: 'false',
     insight: 'Treat applications that cannot be updated as compromised.',
     nodes: []
+  },
+  s6: {
+    concept: 'device',
+    attribute: 'update',
+    attributeValue: 'action',
+    insight: 'Define a policy to update Devices that require user action.',
+    nodes: []
+  },
+  s7: {
+    concept: 'application',
+    attribute: 'update',
+    attributeValue: 'action',
+    insight: 'Define a policy to update Applications that require user action.',
+    nodes: []
   }
 }
 
-module.exports = insightList
+module.exports = insightsList

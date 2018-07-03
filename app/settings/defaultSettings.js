@@ -63,17 +63,12 @@ const settings = {
   colorTheme: 'dark',
   // number of maximum bubbles in the message area
   maxNumberOfBubbles: 15,
-  // url for the ASTo wiki
-  docsURL: 'https://github.com/CapriTechLimited/5G-SAT',
   // url for searching vulnerabilities
-  cveSearchUrl: 'https://cve.circl.lu/api/search/',
-  // url for issue reporting
-  issueURL: 'https://github.com/CapriTechLimited/5G-SAT/issues'
+  cveSearchUrl: 'https://cve.circl.lu/api/search/'
 }
 
 module.exports = settings
 `
-
 module.exports = {
   settings: settings
 }

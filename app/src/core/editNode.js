@@ -2,6 +2,77 @@
 
 const rmElement = require('../helpers/rmElement.js')
 
+// options of the enumerated selections
+const layerOptions = ['perception', 'gateway', 'application']
+const ioOptions = [
+  'dataDigital',
+  'dataEnvironmental',
+  'command',
+  'action',
+  'notification',
+  'trigger'
+]
+const updateOptions = ['automatic', 'action', 'false']
+const stateOptions = ['static', 'dynamic']
+const threatOptions = [
+  'spoofing',
+  'tampering',
+  'repudiation',
+  'informationDisclosure',
+  'denialOfService',
+  'elevationOfPrivilege'
+]
+const propertyOptions = [
+  'authentication',
+  'integrity',
+  'authorization',
+  'confidentiality',
+  'availability',
+  'non repudiation'
+]
+const mediumOptions = ['wireless', 'wired']
+
+/**
+ * creates dynamic selections for enumerated values
+ *
+ * @param {string} selectionForm form div element (= form)
+ * @param {string} selectionKey iterator of node element
+ * @param {Array} selectionOptions options of the enumerated selections
+ * @param {Object} data node element data (= nodeData)
+ * @param {Array} ids id div element (= inputIds)
+ */
+const selectionLayout = (
+  selectionForm,
+  selectionKey,
+  selectionOptions,
+  data,
+  ids
+) => {
+  const selectionLabel = document.createElement('label')
+  selectionLabel.setAttribute('for', selectionKey)
+  selectionLabel.textContent = `${selectionKey}: `
+
+  const selectionList = document.createElement('select')
+  selectionList.className = 'input-form'
+  selectionList.id = selectionKey
+
+  const keyToFind = data[selectionKey]
+  const index = selectionOptions.indexOf(keyToFind)
+
+  selectionForm.appendChild(selectionLabel)
+  selectionForm.appendChild(selectionList)
+  selectionOptions.map(value => {
+    let option = document.createElement('option')
+    option.value = value
+    option.text = value
+    selectionList.appendChild(option)
+  })
+  // set the value the stored selection
+  selectionList.selectedIndex = index
+  // store the keys to later render them dynamically
+  ids.push(selectionKey)
+}
+
 /**
  * creates a form to edit the node
  *
@@ -13,16 +84,35 @@ const createForm = selectedNode => {
   form.className = 'bubble'
   form.id = 'form-id'
 
-  let label = ''
-  let input = ''
   let inputIds = []
 
   const nodeData = selectedNode.data().asto
   Object.keys(nodeData).map(key => {
-    // won't display the concept attribute
-    if (key !== 'concept') {
-      label = document.createElement('label')
-      input = document.createElement('input')
+    if (key === 'layer') {
+      // device layer attribute
+      selectionLayout(form, key, layerOptions, nodeData, inputIds)
+    } else if (key === 'input' || key === 'output') {
+      // device/application input/output
+      selectionLayout(form, key, ioOptions, nodeData, inputIds)
+    } else if (key === 'update') {
+      // device/application update
+      selectionLayout(form, key, updateOptions, nodeData, inputIds)
+    } else if (key === 'medium') {
+      // connection medium
+      selectionLayout(form, key, mediumOptions, nodeData, inputIds)
+    } else if (key === 'state') {
+      // micronet state
+      selectionLayout(form, key, stateOptions, nodeData, inputIds)
+    } else if (key === 'category') {
+      // threat category
+      selectionLayout(form, key, threatOptions, nodeData, inputIds)
+    } else if (key === 'property') {
+      // constraint property
+      selectionLayout(form, key, propertyOptions, nodeData, inputIds)
+    } else if (key !== 'concept') {
+      // won't display the concept attribute
+      const label = document.createElement('label')
+      const input = document.createElement('input')
       input.className = 'input-form'
       // create an key-based id
       // to iterate on the submitted attributes
@@ -32,7 +122,7 @@ const createForm = selectedNode => {
       input.value = nodeData[key]
 
       label.setAttribute('for', key)
-      label.textContent = `${key}: `
+      label.textContent = `${key}:`
       form.appendChild(label)
       form.appendChild(input)
       // store the keys to later render them dynamically

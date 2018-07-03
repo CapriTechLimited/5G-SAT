@@ -39,7 +39,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
         }
       })
       break
-    case 'network connection':
+    case 'connection':
       cy.add({
         group: 'nodes',
         data: {
@@ -47,8 +47,9 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
+            medium: '',
             listOfProtocols: '',
-            concept: 'network connection'
+            concept: 'connection'
           }
         },
         renderedPosition: {
@@ -229,7 +230,7 @@ module.exports = function addImpComponent (cy, event, nodeCounter) {
           label: `${component}`,
           asto: {
             description: '',
-            type: '',
+            category: '',
             concept: 'threat'
           }
         },

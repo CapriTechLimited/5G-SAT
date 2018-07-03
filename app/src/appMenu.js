@@ -1,9 +1,7 @@
 const electron = require('electron')
 const app = electron.app
 
-const docsURL = 'https://github.com/CapriTechLimited/5G-SAT'
-// url for issue reporting
-const issueURL = 'https://github.com/CapriTechLimited/5G-SAT/issues'
+const urls = require('../settings/urls.js')
 
 const template = [
   {
@@ -44,14 +42,15 @@ const template = [
       {
         label: '5G-SAT documentation',
         click () {
-          require('electron').shell.openExternal(docsURL)
+          require('electron').shell.openExternal(urls.docsURL)
+          // console.log('tess')
         }
       },
       { type: 'separator' },
       {
         label: 'Report Issue',
         click () {
-          require('electron').shell.openExternal(issueURL)
+          require('electron').shell.openExternal(urls.issuesURL)
         }
       }
     ]

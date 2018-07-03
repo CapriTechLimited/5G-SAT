@@ -42,14 +42,14 @@
   },
   "homepage": "https://github.com/CapriTechLimited/5G-SAT/#readme",
   "dependencies": {
-    "cytoscape": "^3.2.13",
+    "cytoscape": "^3.2.14",
     "jsonfile": "^4.0.0"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
     "electron": "^2.0.3",
-    "electron-builder": "^20.16.0",
-    "prettier": "^1.13.5",
+    "electron-builder": "^20.19.1",
+    "prettier": "^1.13.7",
     "standard": "^11.0.1"
   }
 }

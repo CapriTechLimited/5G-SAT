@@ -52,21 +52,21 @@ graphModel.elements = [
   }, {
     data: {
       id: '4',
-      label: 'network connection',
+      label: 'connection',
       asto: {
-        description: 'wireless',
-        listOfProtocols: 'HTTP, TELNET, SHH',
-        concept: 'network connection'
+        description: 'HTTP, SSH, Telnet',
+        medium: 'wireless',
+        concept: 'connection'
       }
     }
   }, {
     data: {
       id: '5',
-      label: 'network connection',
+      label: 'connection',
       asto: {
-        description: 'wireless',
-        listOfProtocols: 'HTTP, TELNET, SHH',
-        concept: 'network connection'
+        description: 'HTTP, SSH, Telnet',
+        medium: 'wireless',
+        concept: 'connection'
       }
     }
   }, {
@@ -114,7 +114,7 @@ graphModel.elements = [
       label: 'threat',
       asto: {
         description: 'direct browsing',
-        type: 'spoofing',
+        category: 'spoofing',
         concept: 'threat'
       }
     }
