@@ -3,17 +3,9 @@
 const rmElement = require('../helpers/rmElement.js')
 
 // options of the enumerated selections
-const layerOptions = ['perception', 'gateway', 'application']
-const ioOptions = [
-  'dataDigital',
-  'dataEnvironmental',
-  'command',
-  'action',
-  'notification',
-  'trigger'
-]
-const updateOptions = ['automatic', 'action', 'false']
-const stateOptions = ['static', 'dynamic']
+const actorOptions = ['service provider', 'infrastructure provider', 'user']
+const dcOptions = ['cloud', 'main', 'light']
+const vnfOptions = ['storage', 'function', 'process']
 const threatOptions = [
   'spoofing',
   'tampering',
@@ -30,7 +22,6 @@ const propertyOptions = [
   'availability',
   'non repudiation'
 ]
-const mediumOptions = ['wireless', 'wired']
 
 /**
  * creates dynamic selections for enumerated values
@@ -88,25 +79,16 @@ const createForm = selectedNode => {
 
   const nodeData = selectedNode.data().asto
   Object.keys(nodeData).map(key => {
-    if (key === 'layer') {
-      // device layer attribute
-      selectionLayout(form, key, layerOptions, nodeData, inputIds)
-    } else if (key === 'input' || key === 'output') {
-      // device/application input/output
-      selectionLayout(form, key, ioOptions, nodeData, inputIds)
-    } else if (key === 'update') {
-      // device/application update
-      selectionLayout(form, key, updateOptions, nodeData, inputIds)
-    } else if (key === 'medium') {
-      // connection medium
-      selectionLayout(form, key, mediumOptions, nodeData, inputIds)
-    } else if (key === 'state') {
-      // micronet state
-      selectionLayout(form, key, stateOptions, nodeData, inputIds)
-    } else if (key === 'category') {
+    if (key === 'actorType') {
+      selectionLayout(form, key, actorOptions, nodeData, inputIds)
+    } else if (key === 'dcType') {
+      selectionLayout(form, key, dcOptions, nodeData, inputIds)
+    } else if (key === 'vnfType') {
+      selectionLayout(form, key, vnfOptions, nodeData, inputIds)
+    } else if (key === 'threatType') {
       // threat category
       selectionLayout(form, key, threatOptions, nodeData, inputIds)
-    } else if (key === 'property') {
+    } else if (key === 'constraintType') {
       // constraint property
       selectionLayout(form, key, propertyOptions, nodeData, inputIds)
     } else if (key !== 'concept') {
