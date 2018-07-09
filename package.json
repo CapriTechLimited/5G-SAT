@@ -32,8 +32,18 @@
     },
     "linux": {
       "target": [
-        "AppImage",
-        "deb"
+        {
+          "target": "deb",
+          "arch": ["x64"]
+        },
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        },
+        {
+          "target": "rpm",
+          "arch": ["x64"]
+        }
       ]
     },
     "win": {
@@ -47,8 +57,8 @@
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
-    "electron": "^2.0.3",
-    "electron-builder": "^20.19.1",
+    "electron": "^2.0.4",
+    "electron-builder": "^20.19.2",
     "prettier": "^1.13.7",
     "standard": "^11.0.1"
   }
