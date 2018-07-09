@@ -1,45 +1,39 @@
-/**
- * shows the total number of nodes, their concept type and module
- *
- * @param {Object} cy cytoscape instance
- */
-module.exports = function overview (cy) {
-  // initialize the output of the module
-  let output = ''
+let output = ''
 
-  // stores the number of each node
-  const graphNodes = {
-    actor: {
-      numberOfNodes: 0
-    },
-    device: {
-      numberOfNodes: 0
-    },
-    information: {
-      numberOfNodes: 0
-    },
-    'data center': {
-      numberOfNodes: 0
-    },
-    vnf: {
-      numberOfNodes: 0
-    },
-    'malicious actor': {
-      numberOfNodes: 0
-    },
-    asset: {
-      numberOfNodes: 0
-    },
-    constraint: {
-      numberOfNodes: 0
-    },
-    threat: {
-      numberOfNodes: 0
-    }
+// stores the number of each node
+const graphNodes = {
+  actor: {
+    numberOfNodes: 0
+  },
+  device: {
+    numberOfNodes: 0
+  },
+  information: {
+    numberOfNodes: 0
+  },
+  'data center': {
+    numberOfNodes: 0
+  },
+  vnf: {
+    numberOfNodes: 0
+  },
+  'malicious actor': {
+    numberOfNodes: 0
+  },
+  asset: {
+    numberOfNodes: 0
+  },
+  constraint: {
+    numberOfNodes: 0
+  },
+  threat: {
+    numberOfNodes: 0
   }
+}
 
+module.exports = function overview (cy) {
   const totalNodes = cy.elements().nodes().length
-  output = `• total nodes: ${totalNodes}\n\n`
+  output = `• total: ${totalNodes}\n\n`
 
   // count the number of nodes
   cy.nodes().map(node => {
@@ -54,7 +48,7 @@ module.exports = function overview (cy) {
 
   // compose the output by parsing the objects
   const composeOutput = (node, numberOfNodes) => {
-    output += `• ${node} nodes: ${numberOfNodes}\n`
+    output += `• ${node}: ${numberOfNodes}\n`
   }
 
   // new line between modules and concepts
