@@ -4,10 +4,10 @@
   "description": "A graphical security analysis tool for 5G systems",
   "main": "./app/src/main.js",
   "scripts": {
-    "lint": "prettier --no-semi --single-quote --write './app/**/*.js' && standard './app/**/*.js' --fix",
-    "dev": "cross-env NODE_ENV=development electron ./app/src/main.js",
-    "postinstall": "install-app-deps",
     "start": "electron ./app/src/main.js",
+    "dev": "cross-env NODE_ENV=development electron ./app/src/main.js",
+    "lint": "prettier --no-semi --single-quote --write './app/**/*.js' && standard './app/**/*.js' --fix",
+    "postinstall": "electron-builder install-app-deps",
     "dist": "build"
   },
   "repository": {
@@ -34,15 +34,21 @@
       "target": [
         {
           "target": "deb",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         },
         {
           "target": "AppImage",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         },
         {
           "target": "rpm",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ]
     },
@@ -57,8 +63,8 @@
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
-    "electron": "^2.0.4",
-    "electron-builder": "^20.19.2",
+    "electron": "^2.0.5",
+    "electron-builder": "^20.21.2",
     "prettier": "^1.13.7",
     "standard": "^11.0.1"
   }
