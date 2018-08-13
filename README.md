@@ -19,9 +19,6 @@ Some screenshots..
 
 ![5G-SAT screenshot design phase security analysis](https://raw.githubusercontent.com/CapriTechLimited/5G-SAT/master/assets/screenShot4.png)
 
-
-5G-SAT supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). You can switch between the themes by typing `toggle` in ASTo's console (bottom right corner, cmd/ctrl + l). To make the change persistent between startups you need to modify the `config.colorTheme` variable in the `./app/settings/config.js` file. The value can either be `dark` or `light`.
-
 ## Color themes
 
 ASTo supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). To switch between themes use the toggle button on the bottom left corner.
